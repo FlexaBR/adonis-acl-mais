@@ -40,6 +40,13 @@ class User extends Model {
   getAvatarUrl({ avatar }) {
     return `${Env.get('APP_URL')}/files/${avatar || 'placeholder.png'}`;
   }
+
+  static get traits() {
+    return [
+      '@provider:Adonis/Acl/HasRole',
+      '@provider:Adonis/Acl/HasPermission',
+    ];
+  }
 }
 
 module.exports = User;

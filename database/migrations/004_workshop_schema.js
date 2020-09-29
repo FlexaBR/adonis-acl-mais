@@ -15,6 +15,7 @@ class WorkshopSchema extends Schema {
       table.string('color').notNullable().defaultTo('#7159c1');
       table.string('title').notNullable();
       table.text('description').notNullable();
+      table.string('type');
       table.enu('section', [1, 2, 3]).notNullable();
       table.timestamps();
     });
